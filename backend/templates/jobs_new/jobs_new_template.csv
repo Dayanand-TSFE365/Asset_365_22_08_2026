@@ -1,0 +1,6 @@
+job_no,customer_name,panel_description,panel_quantity,so_no,mom_by,job_date,tested_by,end_user,site_commissioned,job_status,remarks_action,remarks
+J001,ABC Pvt Ltd,PLC Panel,1,SO001,Rahul,2026-07-20,Amit,XYZ,Dayanand,Completed,Initial Job,PLC Panel Completed
+J001,ABC Pvt Ltd,MCC Panel,2,SO001,Rahul,2026-07-20,Amit,XYZ,Dayanand,Completed,Initial Job,MCC Panel Pending
+J001,ABC Pvt Ltd,VFD Panel,1,SO001,Rahul,2026-07-20,Amit,XYZ,Dayanand,Completed,Initial Job,Awaiting Testing
+J002,XYZ Industries,APFC Panel,1,SO002,Suresh,2026-07-21,Rakesh,ABC,Rohit,In Progress,Phase 1,Testing Completed
+J002,XYZ Industries,PCC Panel,2,SO002,Suresh,2026-07-21,Rakesh,ABC,Rohit,In Progress,Phase 1,Pending Testing

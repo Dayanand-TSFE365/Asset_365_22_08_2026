@@ -1,0 +1,3 @@
+name,model_no,company,category,manufacturer,total_qty,available_qty,min_qty
+Dell Mouse,WM126,Infosys Ltd,Mouse,Dell,100,90,10
+HP Keyboard,K1500,Tata Consultancy Services,Keyboard,HP,50,40,5

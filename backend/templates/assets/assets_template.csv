@@ -1,0 +1,6 @@
+asset_tag,asset_name,serial_number,model,status,company
+AST001,Dell Laptop,DL123,Dell XPS 13,Ready to Deploy,Infosys Ltd
+AST002,Macbook Device,MB456,"Macbook Pro 13""",Deployed,Tata Consultancy Services
+AST003,HP Device,HP789,HP EliteBook 840,Archived,Wipro Technologies
+AST004,MacBook Pro 14,MB111,MacBook Pro,In Stock,Apple India
+AST005,Dell Optiplex 7090,DL999,Optiplex 7090,Ready,XYZ Corp

@@ -1,0 +1,3 @@
+name,model_no,company,category,manufacturer,total_qty,remaining_qty,min_qty,unit_cost
+HDMI Cable,HDM100,Infosys Ltd,Cables,Dell,100,80,10,200
+Battery Pack,BAT500,Wipro Technologies,Electronics,HP,50,40,5,500

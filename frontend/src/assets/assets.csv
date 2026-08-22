@@ -1,0 +1,7 @@
+asset_tag,asset_name,serial_number,model,status,company
+AST101,Dell Office Laptop,DL101,Dell XPS 13,Ready to Deploy,Infosys Ltd
+AST102,Macbook Designer System,MB102,Macbook Pro 13",Deployed,Tata Consultancy Services
+AST103,HP Developer Laptop,HP103,HP EliteBook 840,Archived,Wipro Technologies
+AST104,Lenovo Testing Device,LN104,Wrong Model,Ready to Deploy,Infosys Ltd
+AST105,QA Laptop,QA105,Dell XPS 13,Wrong Status,Tata Consultancy Services
+AST106,Admin Laptop,AD106,Macbook Pro 13",Deployed,Wrong Company

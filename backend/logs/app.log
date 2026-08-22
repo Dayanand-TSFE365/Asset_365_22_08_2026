@@ -1,0 +1,175 @@
+2026-08-21 10:28:46,519 | INFO | app.websocket.ticket_chat_manager | [TICKET WS] TicketChatManager initialized
+2026-08-21 10:30:11,145 | INFO | app.websocket.ticket_chat_websocket | [TICKET WS ROUTE] REQUEST RECEIVED | ticket_id=23 | client=Address(host='192.168.1.48', port=60693)
+2026-08-21 10:30:11,146 | INFO | app.websocket.ticket_chat_manager | [TICKET WS] CONNECTION REQUEST | ticket_id=23 | client=Address(host='192.168.1.48', port=60693)
+2026-08-21 10:30:11,146 | INFO | app.websocket.ticket_chat_manager | [TICKET WS] ACCEPTING CONNECTION | ticket_id=23
+2026-08-21 10:30:11,146 | INFO | app.websocket.ticket_chat_manager | [TICKET WS] CONNECTION ESTABLISHED | ticket_id=23 | client=Address(host='192.168.1.48', port=60693) | active_connections=1
+2026-08-21 10:30:11,146 | INFO | app.websocket.ticket_chat_websocket | [TICKET WS ROUTE] CONNECTION ESTABLISHED | ticket_id=23 | client=Address(host='192.168.1.48', port=60693)
+2026-08-21 10:30:15,832 | WARNING | app.websocket.ticket_chat_websocket | [TICKET WS ROUTE] CLIENT DISCONNECTED | ticket_id=23 | client=Address(host='192.168.1.48', port=60693) | close_code=1005
+2026-08-21 10:30:15,844 | INFO | app.websocket.ticket_chat_manager | [TICKET WS] DISCONNECT REQUEST | ticket_id=23 | client=Address(host='192.168.1.48', port=60693)
+2026-08-21 10:30:15,844 | INFO | app.websocket.ticket_chat_manager | [TICKET WS] CONNECTION REMOVED | ticket_id=23 | client=Address(host='192.168.1.48', port=60693) | remaining_connections=0
+2026-08-21 10:30:15,845 | INFO | app.websocket.ticket_chat_manager | [TICKET WS] EMPTY ROOM REMOVED | ticket_id=23
+2026-08-21 12:28:35,063 | INFO | app.websocket.ticket_chat_manager | [TICKET WS] TicketChatManager initialized
+2026-08-21 13:38:56,528 | INFO | app.websocket.ticket_chat_manager | [TICKET WS] TicketChatManager initialized
+2026-08-21 14:31:07,054 | INFO | app.websocket.ticket_chat_manager | [TICKET WS] TicketChatManager initialized
+2026-08-21 14:31:08,002 | INFO | app | ==================================================
+2026-08-21 14:31:08,002 | INFO | app | FastAPI application started
+2026-08-21 14:31:08,002 | INFO | app | FastAPI server is running
+2026-08-21 14:31:08,002 | INFO | app | ==================================================
+2026-08-21 14:44:25,465 | INFO | app.websocket.ticket_chat_manager | [TICKET WS] TicketChatManager initialized
+2026-08-21 14:44:27,234 | INFO | app | ==================================================
+2026-08-21 14:44:27,234 | INFO | app | FastAPI application started
+2026-08-21 14:44:27,234 | INFO | app | FastAPI server is running
+2026-08-21 14:44:27,241 | INFO | app | ==================================================
+2026-08-21 14:46:36,202 | INFO | app.websocket.ticket_chat_manager | [TICKET WS] TicketChatManager initialized
+2026-08-21 14:46:38,038 | INFO | app | ==================================================
+2026-08-21 14:46:38,038 | INFO | app | FastAPI application started
+2026-08-21 14:46:38,045 | INFO | app | FastAPI server is running
+2026-08-21 14:46:38,045 | INFO | app | ==================================================
+2026-08-21 16:05:05,287 | INFO | app | ============================================================
+2026-08-21 16:05:05,287 | INFO | app | FastAPI application starting
+2026-08-21 16:05:05,287 | INFO | app | FastAPI logging initialized
+2026-08-21 16:05:05,287 | INFO | app | ============================================================
+2026-08-21 16:19:13,193 | INFO | app | ============================================================
+2026-08-21 16:19:13,194 | INFO | app | FastAPI application starting
+2026-08-21 16:19:13,195 | INFO | app | FastAPI logging initialized
+2026-08-21 16:19:13,195 | INFO | app | ============================================================
+2026-08-21 16:19:13,197 | INFO | app | ============================================================
+2026-08-21 16:19:13,197 | INFO | app | FastAPI application started
+2026-08-21 16:19:13,198 | INFO | app | Application initialized successfully
+2026-08-21 16:19:13,199 | INFO | app | ============================================================
+2026-08-21 16:20:26,155 | INFO | app | ============================================================
+2026-08-21 16:20:26,155 | INFO | app | FastAPI application starting
+2026-08-21 16:20:26,155 | INFO | app | FastAPI logging initialized
+2026-08-21 16:20:26,155 | INFO | app | ============================================================
+2026-08-21 16:20:26,159 | INFO | app | ============================================================
+2026-08-21 16:20:26,159 | INFO | app | FastAPI application started
+2026-08-21 16:20:26,159 | INFO | app | Application initialized successfully
+2026-08-21 16:20:26,159 | INFO | app | ============================================================
+2026-08-21 16:30:47,158 | INFO | app | ============================================================
+2026-08-21 16:30:47,158 | INFO | app | FastAPI application starting
+2026-08-21 16:30:47,160 | INFO | app | FastAPI logging initialized
+2026-08-21 16:30:47,160 | INFO | app | ============================================================
+2026-08-21 16:30:47,160 | INFO | app | ============================================================
+2026-08-21 16:30:47,160 | INFO | app | FastAPI application started
+2026-08-21 16:30:47,160 | INFO | app | Application initialized successfully
+2026-08-21 16:30:47,160 | INFO | app | ============================================================
+2026-08-21 16:36:51,002 | INFO | app | ============================================================
+2026-08-21 16:36:51,004 | INFO | app | FastAPI application starting
+2026-08-21 16:36:51,004 | INFO | app | FastAPI logging initialized
+2026-08-21 16:36:51,004 | INFO | app | ============================================================
+2026-08-21 16:36:51,004 | INFO | app | ============================================================
+2026-08-21 16:36:51,004 | INFO | app | FastAPI application started
+2026-08-21 16:36:51,006 | INFO | app | Application initialized successfully
+2026-08-21 16:36:51,006 | INFO | app | ============================================================
+2026-08-21 16:53:59,759 | INFO | app | ============================================================
+2026-08-21 16:53:59,759 | INFO | app | FastAPI application starting
+2026-08-21 16:53:59,759 | INFO | app | FastAPI logging initialized
+2026-08-21 16:53:59,759 | INFO | app | ============================================================
+2026-08-21 16:53:59,759 | INFO | app | ============================================================
+2026-08-21 16:53:59,759 | INFO | app | FastAPI application started
+2026-08-21 16:53:59,759 | INFO | app | Application initialized successfully
+2026-08-21 16:53:59,759 | INFO | app | ============================================================
+2026-08-22 09:18:59,134 | INFO | app | ============================================================
+2026-08-22 09:18:59,136 | INFO | app | FastAPI application starting
+2026-08-22 09:18:59,136 | INFO | app | FastAPI logging initialized
+2026-08-22 09:18:59,136 | INFO | app | ============================================================
+2026-08-22 09:18:59,669 | INFO | app | ============================================================
+2026-08-22 09:18:59,669 | INFO | app | FastAPI application started
+2026-08-22 09:18:59,669 | INFO | app | Application initialized successfully
+2026-08-22 09:18:59,669 | INFO | app | ============================================================
+2026-08-22 09:30:14,033 | INFO | app | ============================================================
+2026-08-22 09:30:14,033 | INFO | app | FastAPI application starting
+2026-08-22 09:30:14,033 | INFO | app | FastAPI logging initialized
+2026-08-22 09:30:14,042 | INFO | app | ============================================================
+2026-08-22 09:30:14,511 | INFO | app | ============================================================
+2026-08-22 09:30:14,511 | INFO | app | FastAPI application started
+2026-08-22 09:30:14,516 | INFO | app | Application initialized successfully
+2026-08-22 09:30:14,516 | INFO | app | ============================================================
+2026-08-22 10:37:55,209 | INFO | app | ============================================================
+2026-08-22 10:37:55,209 | INFO | app | FastAPI application starting
+2026-08-22 10:37:55,209 | INFO | app | FastAPI logging initialized
+2026-08-22 10:37:55,213 | INFO | app | ============================================================
+2026-08-22 10:37:55,614 | INFO | app | ============================================================
+2026-08-22 10:37:55,616 | INFO | app | FastAPI application started
+2026-08-22 10:37:55,616 | INFO | app | Application initialized successfully
+2026-08-22 10:37:55,616 | INFO | app | ============================================================
+2026-08-22 10:51:58,179 | INFO | app | ============================================================
+2026-08-22 10:51:58,179 | INFO | app | FastAPI application starting
+2026-08-22 10:51:58,179 | INFO | app | FastAPI logging initialized
+2026-08-22 10:51:58,179 | INFO | app | ============================================================
+2026-08-22 10:51:58,530 | INFO | app | ============================================================
+2026-08-22 10:51:58,530 | INFO | app | FastAPI application started
+2026-08-22 10:51:58,530 | INFO | app | Application initialized successfully
+2026-08-22 10:51:58,530 | INFO | app | ============================================================
+2026-08-22 10:53:20,798 | INFO | app | ============================================================
+2026-08-22 10:53:20,798 | INFO | app | FastAPI application starting
+2026-08-22 10:53:20,798 | INFO | app | FastAPI logging initialized
+2026-08-22 10:53:20,798 | INFO | app | ============================================================
+2026-08-22 10:53:21,275 | INFO | app | ============================================================
+2026-08-22 10:53:21,275 | INFO | app | FastAPI application started
+2026-08-22 10:53:21,281 | INFO | app | Application initialized successfully
+2026-08-22 10:53:21,282 | INFO | app | ============================================================
+2026-08-22 10:54:15,688 | INFO | app | ============================================================
+2026-08-22 10:54:15,690 | INFO | app | FastAPI application starting
+2026-08-22 10:54:15,691 | INFO | app | FastAPI logging initialized
+2026-08-22 10:54:15,691 | INFO | app | ============================================================
+2026-08-22 10:54:16,053 | INFO | app | ============================================================
+2026-08-22 10:54:16,053 | INFO | app | FastAPI application started
+2026-08-22 10:54:16,055 | INFO | app | Application initialized successfully
+2026-08-22 10:54:16,055 | INFO | app | ============================================================
+2026-08-22 11:34:46,485 | INFO | app | ============================================================
+2026-08-22 11:34:46,485 | INFO | app | FastAPI application starting
+2026-08-22 11:34:46,485 | INFO | app | FastAPI logging initialized
+2026-08-22 11:34:46,491 | INFO | app | ============================================================
+2026-08-22 11:34:46,811 | INFO | app | ============================================================
+2026-08-22 11:34:46,811 | INFO | app | FastAPI application started
+2026-08-22 11:34:46,811 | INFO | app | Application initialized successfully
+2026-08-22 11:34:46,811 | INFO | app | ============================================================
+2026-08-22 11:42:32,253 | INFO | app | ============================================================
+2026-08-22 11:42:32,253 | INFO | app | FastAPI application starting
+2026-08-22 11:42:32,253 | INFO | app | FastAPI logging initialized
+2026-08-22 11:42:32,253 | INFO | app | ============================================================
+2026-08-22 11:42:32,479 | INFO | app | ============================================================
+2026-08-22 11:42:32,479 | INFO | app | FastAPI application started
+2026-08-22 11:42:32,479 | INFO | app | Application initialized successfully
+2026-08-22 11:42:32,479 | INFO | app | ============================================================
+2026-08-22 12:16:30,154 | INFO | app | ============================================================
+2026-08-22 12:16:30,154 | INFO | app | FastAPI application starting
+2026-08-22 12:16:30,154 | INFO | app | FastAPI logging initialized
+2026-08-22 12:16:30,163 | INFO | app | ============================================================
+2026-08-22 12:16:30,404 | INFO | app | ============================================================
+2026-08-22 12:16:30,404 | INFO | app | FastAPI application started
+2026-08-22 12:16:30,404 | INFO | app | Application initialized successfully
+2026-08-22 12:16:30,404 | INFO | app | ============================================================
+2026-08-22 12:19:15,460 | INFO | app | ============================================================
+2026-08-22 12:19:15,460 | INFO | app | FastAPI application starting
+2026-08-22 12:19:15,460 | INFO | app | FastAPI logging initialized
+2026-08-22 12:19:15,460 | INFO | app | ============================================================
+2026-08-22 12:19:15,880 | INFO | app | ============================================================
+2026-08-22 12:19:15,880 | INFO | app | FastAPI application started
+2026-08-22 12:19:15,880 | INFO | app | Application initialized successfully
+2026-08-22 12:19:15,880 | INFO | app | ============================================================
+2026-08-22 12:38:59,696 | INFO | app | ============================================================
+2026-08-22 12:38:59,696 | INFO | app | FastAPI application starting
+2026-08-22 12:38:59,696 | INFO | app | FastAPI logging initialized
+2026-08-22 12:38:59,696 | INFO | app | ============================================================
+2026-08-22 12:38:59,971 | INFO | app | ============================================================
+2026-08-22 12:38:59,971 | INFO | app | FastAPI application started
+2026-08-22 12:38:59,971 | INFO | app | Application initialized successfully
+2026-08-22 12:38:59,973 | INFO | app | ============================================================
+2026-08-22 12:41:53,856 | INFO | app | ============================================================
+2026-08-22 12:41:53,856 | INFO | app | FastAPI application starting
+2026-08-22 12:41:53,868 | INFO | app | FastAPI logging initialized
+2026-08-22 12:41:53,869 | INFO | app | ============================================================
+2026-08-22 12:41:54,257 | INFO | app | ============================================================
+2026-08-22 12:41:54,257 | INFO | app | FastAPI application started
+2026-08-22 12:41:54,257 | INFO | app | Application initialized successfully
+2026-08-22 12:41:54,257 | INFO | app | ============================================================
+2026-08-22 12:42:52,450 | INFO | app | ============================================================
+2026-08-22 12:42:52,450 | INFO | app | FastAPI application starting
+2026-08-22 12:42:52,450 | INFO | app | FastAPI logging initialized
+2026-08-22 12:42:52,458 | INFO | app | ============================================================
+2026-08-22 12:42:52,785 | INFO | app | ============================================================
+2026-08-22 12:42:52,785 | INFO | app | FastAPI application started
+2026-08-22 12:42:52,785 | INFO | app | Application initialized successfully
+2026-08-22 12:42:52,785 | INFO | app | ============================================================

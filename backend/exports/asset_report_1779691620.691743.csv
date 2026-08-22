@@ -1,0 +1,8 @@
+asset_tag,asset_name,serial_number,company_name,model_name,status_name,location_name,supplier_name,purchase_cost,current_value,purchase_date,warranty_expires,next_audit_date,order_number,condition,requestable,byod,created_at
+AST003,Laptop,HP789,Wipro Technologies,HP EliteBook 840,Ready to Deploy,Noida Corporate Office,Tech Solutions Pvt Ltd,1500000.00,9998.00,2026-04-29,2026-06-06,2026-05-07,ING123456345,good,,,2026-05-23 10:29:01.437000
+AST002,Macbook Device,MB456,Tata Consultancy Services,"Macbook Pro 13""",Deployed,,,,,,,,,,,,2026-05-23 10:29:01.353000
+AST001,Dell Laptop,DL123,Infosys Ltd,Dell XPS 13,Ready to Deploy,,,,,,,,,,,,2026-05-23 10:29:01.273000
+Ada12345,Laptop,98767,Wipro Technologies,Dell XPS 13,Deployed,Noida Corporate Office,Alpha Traders,30000.00,,2026-05-01,2026-10-31,2026-05-31,ING123456778,,,,2026-05-23 06:16:05.483000
+NYT879890,Tablet,3887728,Zomato Ltd,Asus ZenBook 14,Pending,Ahmedabad Operations,Alpha Traders,150000.00,100002.00,2026-04-26,2026-06-06,2026-06-05,ING123456345,good,,,2026-05-21 11:23:00.043000
+BTY789,Tablet,2452717,Wipro Technologies,"LG UltraWide 29""",Deployed,Chennai Branch,NextGen Supplies,1500000.00,,2026-04-27,2026-06-06,2026-06-05,ING123456789,,,,2026-05-21 11:01:57.047000
+AD1234,,1234987,Wipro Technologies,Dell XPS 13,Ready to Deploy,Delhi Headquarters,Alpha Traders,30000.00,0.00,2026-05-01,2026-10-31,2026-05-31,ING123456778,-,,,2026-05-21 07:01:46.100000

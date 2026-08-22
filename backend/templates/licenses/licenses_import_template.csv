@@ -1,0 +1,6 @@
+license_type,job_po_no,client_name,customer_po,product_name,description,serial_number,product_key,email_id,password,note_1,note_2,remarks,expired_on,supplier,order_number,purchase_order_number,contract,purchase_date,purchase_cost
+ROCKWELL,TSF/IT/018,Nuticia,CPO-001,Studio 5000,Professional Edition,SN123456,RK-1234-5678,,,Activation Server,License Note,Annual License,2028-12-31,TSFE,ORD001,PO001,AMC-2026,2026-06-01,50000
+MICROSOFT WINDOWS,TSF/IT/019,ABC Industries,CPO-002,Windows 11 Pro,OEM License,,WIN-1234-5678,,,,,Perpetual License,,TSFE,ORD002,PO002,AMC-2026,2026-06-05,12000
+MICROSOFT EXCEL,TSF/IT/020,XYZ Ltd,CPO-003,Microsoft Excel,Office 365,,EXCEL-1234-5678,user@gmail.com,password123,,,Business Subscription,,TSFE,ORD003,PO003,AMC-2026,2026-06-10,8000
+MICROSOFT SQL,TSF/IT/021,TSF Engineers,CPO-004,Microsoft SQL,Enterprise Edition,,SQL-1234-5678,sql@gmail.com,sql@123,,,Production Server,,TSFE,ORD004,PO004,AMC-2026,2026-06-15,45000
+OTHER,TSF/IT/022,Client A,CPO-005,Adobe Acrobat,PDF Tool,,PDF-1234,,,"Admin User","License Note",One Year Subscription,,TSFE,ORD005,PO005,AMC-2026,2026-06-20,15000

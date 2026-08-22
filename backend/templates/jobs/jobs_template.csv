@@ -1,0 +1,4 @@
+job_no,customer_name,so_no,job_date,panel_description,panel_quantity,tested_by,site_commissioned,mom_by,end_user,job_status,remarks_action
+JOB-001,Nutricia,SO-001,2026-06-01,MCC Panel for Boiler,2,Adarsh Verma,Vinay,Rahul,Nutricia India Pvt Ltd,In Progress,Panel fabrication started
+JOB-002,ABC Industries,SO-002,2026-06-10,PLC Control Panel,1,Vinay,Dayanand,Amit,ABC Industries Ltd,Completed,Successfully commissioned
+JOB-003,XYZ Ltd,SO-003,2026-06-15,VFD Panel,3,Dayanand,Adarsh Verma,Rahul,XYZ Ltd,Pending,Awaiting customer approval
