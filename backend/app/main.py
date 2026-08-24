@@ -78,7 +78,7 @@ from app.routes.task_notification_route import router as task_notification_route
 # task websocket route 
 from app.websocket.task_websocket import router as task_websocket_router
 
-
+from app.routes.job_qr_route import router as job_qr_router
 
 from app.routes.feedback_route import router as feedback_router
 from app.routes.redis_celery_diagnostic_route import router as status_diagnostic_router
@@ -259,6 +259,7 @@ app.include_router(task_notification_router)
 # task Websocket Router (Not Shown in Swagger) 
 app.include_router(task_websocket_router)
 
+app.include_router(job_qr_router)
 
 # User Feedback Form Route 
 app.include_router(feedback_router)

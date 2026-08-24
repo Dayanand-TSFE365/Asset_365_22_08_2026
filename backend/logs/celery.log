@@ -166,3 +166,80 @@
 2026-08-22 12:42:52,108 | INFO | celery_app | Celery timezone: Asia/Kolkata
 2026-08-22 12:42:52,108 | INFO | celery_app | Celery task modules loaded: ('app.celery_task.test_tasks', 'app.celery_task.ticket_email_tasks', 'app.celery_task.task_email_tasks')
 2026-08-22 12:42:52,108 | INFO | celery_app | ==================================================
+2026-08-24 09:19:41,727 | INFO | celery_app | ==================================================
+2026-08-24 09:19:41,727 | INFO | celery_app | Celery application initialized
+2026-08-24 09:19:41,727 | INFO | celery_app | Celery broker: redis://localhost:6379/0
+2026-08-24 09:19:41,727 | INFO | celery_app | Celery result backend: redis://localhost:6379/1
+2026-08-24 09:19:41,727 | INFO | celery_app | Celery timezone: Asia/Kolkata
+2026-08-24 09:19:41,727 | INFO | celery_app | Celery task modules loaded: ('app.celery_task.test_tasks', 'app.celery_task.ticket_email_tasks', 'app.celery_task.task_email_tasks')
+2026-08-24 09:19:41,727 | INFO | celery_app | ==================================================
+2026-08-24 09:20:19,227 | INFO | celery_app | ==================================================
+2026-08-24 09:20:19,227 | INFO | celery_app | Celery application initialized
+2026-08-24 09:20:19,227 | INFO | celery_app | Celery broker: redis://localhost:6379/0
+2026-08-24 09:20:19,227 | INFO | celery_app | Celery result backend: redis://localhost:6379/1
+2026-08-24 09:20:19,227 | INFO | celery_app | Celery timezone: Asia/Kolkata
+2026-08-24 09:20:19,230 | INFO | celery_app | Celery task modules loaded: ('app.celery_task.test_tasks', 'app.celery_task.ticket_email_tasks', 'app.celery_task.task_email_tasks')
+2026-08-24 09:20:19,230 | INFO | celery_app | ==================================================
+2026-08-24 11:11:05,351 | INFO | celery_app | ==================================================
+2026-08-24 11:11:05,351 | INFO | celery_app | Celery application initialized
+2026-08-24 11:11:05,351 | INFO | celery_app | Celery broker: redis://localhost:6379/0
+2026-08-24 11:11:05,351 | INFO | celery_app | Celery result backend: redis://localhost:6379/1
+2026-08-24 11:11:05,351 | INFO | celery_app | Celery timezone: Asia/Kolkata
+2026-08-24 11:11:05,361 | INFO | celery_app | Celery task modules loaded: ('app.celery_task.test_tasks', 'app.celery_task.ticket_email_tasks', 'app.celery_task.task_email_tasks')
+2026-08-24 11:11:05,361 | INFO | celery_app | ==================================================
+2026-08-24 11:12:54,753 | INFO | celery_app | ==================================================
+2026-08-24 11:12:54,753 | INFO | celery_app | Celery application initialized
+2026-08-24 11:12:54,753 | INFO | celery_app | Celery broker: redis://localhost:6379/0
+2026-08-24 11:12:54,753 | INFO | celery_app | Celery result backend: redis://localhost:6379/1
+2026-08-24 11:12:54,756 | INFO | celery_app | Celery timezone: Asia/Kolkata
+2026-08-24 11:12:54,761 | INFO | celery_app | Celery task modules loaded: ('app.celery_task.test_tasks', 'app.celery_task.ticket_email_tasks', 'app.celery_task.task_email_tasks')
+2026-08-24 11:12:54,764 | INFO | celery_app | ==================================================
+2026-08-24 14:16:26,642 | INFO | celery_app | ==================================================
+2026-08-24 14:16:26,642 | INFO | celery_app | Celery application initialized
+2026-08-24 14:16:26,648 | INFO | celery_app | Celery broker: redis://localhost:6379/0
+2026-08-24 14:16:26,652 | INFO | celery_app | Celery result backend: redis://localhost:6379/1
+2026-08-24 14:16:26,652 | INFO | celery_app | Celery timezone: Asia/Kolkata
+2026-08-24 14:16:26,672 | INFO | celery_app | Celery task modules loaded: ('app.celery_task.test_tasks', 'app.celery_task.ticket_email_tasks', 'app.celery_task.task_email_tasks')
+2026-08-24 14:16:26,674 | INFO | celery_app | ==================================================
+2026-08-24 15:20:00,488 | INFO | celery_app | ==================================================
+2026-08-24 15:20:00,488 | INFO | celery_app | Celery application initialized
+2026-08-24 15:20:00,490 | INFO | celery_app | Celery broker: redis://localhost:6379/0
+2026-08-24 15:20:00,490 | INFO | celery_app | Celery result backend: redis://localhost:6379/1
+2026-08-24 15:20:00,490 | INFO | celery_app | Celery timezone: Asia/Kolkata
+2026-08-24 15:20:00,503 | INFO | celery_app | Celery task modules loaded: ('app.celery_task.test_tasks', 'app.celery_task.ticket_email_tasks', 'app.celery_task.task_email_tasks')
+2026-08-24 15:20:00,503 | INFO | celery_app | ==================================================
+2026-08-24 15:20:48,011 | INFO | celery_app | ==================================================
+2026-08-24 15:20:48,011 | INFO | celery_app | Celery application initialized
+2026-08-24 15:20:48,011 | INFO | celery_app | Celery broker: redis://localhost:6379/0
+2026-08-24 15:20:48,011 | INFO | celery_app | Celery result backend: redis://localhost:6379/1
+2026-08-24 15:20:48,017 | INFO | celery_app | Celery timezone: Asia/Kolkata
+2026-08-24 15:20:48,021 | INFO | celery_app | Celery task modules loaded: ('app.celery_task.test_tasks', 'app.celery_task.ticket_email_tasks', 'app.celery_task.task_email_tasks')
+2026-08-24 15:20:48,025 | INFO | celery_app | ==================================================
+2026-08-24 15:22:20,852 | INFO | celery_app | ==================================================
+2026-08-24 15:22:20,852 | INFO | celery_app | Celery application initialized
+2026-08-24 15:22:20,868 | INFO | celery_app | Celery broker: redis://localhost:6379/0
+2026-08-24 15:22:20,868 | INFO | celery_app | Celery result backend: redis://localhost:6379/1
+2026-08-24 15:22:20,868 | INFO | celery_app | Celery timezone: Asia/Kolkata
+2026-08-24 15:22:20,877 | INFO | celery_app | Celery task modules loaded: ('app.celery_task.test_tasks', 'app.celery_task.ticket_email_tasks', 'app.celery_task.task_email_tasks')
+2026-08-24 15:22:20,877 | INFO | celery_app | ==================================================
+2026-08-24 15:24:20,380 | INFO | celery_app | ==================================================
+2026-08-24 15:24:20,380 | INFO | celery_app | Celery application initialized
+2026-08-24 15:24:20,380 | INFO | celery_app | Celery broker: redis://localhost:6379/0
+2026-08-24 15:24:20,380 | INFO | celery_app | Celery result backend: redis://localhost:6379/1
+2026-08-24 15:24:20,396 | INFO | celery_app | Celery timezone: Asia/Kolkata
+2026-08-24 15:24:20,396 | INFO | celery_app | Celery task modules loaded: ('app.celery_task.test_tasks', 'app.celery_task.ticket_email_tasks', 'app.celery_task.task_email_tasks')
+2026-08-24 15:24:20,396 | INFO | celery_app | ==================================================
+2026-08-24 15:29:35,545 | INFO | celery_app | ==================================================
+2026-08-24 15:29:35,545 | INFO | celery_app | Celery application initialized
+2026-08-24 15:29:35,545 | INFO | celery_app | Celery broker: redis://localhost:6379/0
+2026-08-24 15:29:35,545 | INFO | celery_app | Celery result backend: redis://localhost:6379/1
+2026-08-24 15:29:35,558 | INFO | celery_app | Celery timezone: Asia/Kolkata
+2026-08-24 15:29:35,562 | INFO | celery_app | Celery task modules loaded: ('app.celery_task.test_tasks', 'app.celery_task.ticket_email_tasks', 'app.celery_task.task_email_tasks')
+2026-08-24 15:29:35,574 | INFO | celery_app | ==================================================
+2026-08-24 15:30:04,005 | INFO | celery_app | ==================================================
+2026-08-24 15:30:04,005 | INFO | celery_app | Celery application initialized
+2026-08-24 15:30:04,007 | INFO | celery_app | Celery broker: redis://localhost:6379/0
+2026-08-24 15:30:04,007 | INFO | celery_app | Celery result backend: redis://localhost:6379/1
+2026-08-24 15:30:04,007 | INFO | celery_app | Celery timezone: Asia/Kolkata
+2026-08-24 15:30:04,020 | INFO | celery_app | Celery task modules loaded: ('app.celery_task.test_tasks', 'app.celery_task.ticket_email_tasks', 'app.celery_task.task_email_tasks')
+2026-08-24 15:30:04,021 | INFO | celery_app | ==================================================
