@@ -27,6 +27,33 @@ class AuthUser(AssetBase):
     is_approved = Column(Boolean, default=False,nullable=False)
     approval_token = Column(String, nullable=True)
     is_default_profile =Column(Boolean, default=False, nullable=False)
+
+    access_type = Column(
+        String(20),
+        nullable=True
+    )
+
+    access_expires_at = Column(
+        DateTime,
+        nullable=True
+    )
+
+    access_extension_requested = Column(
+        Boolean,
+        default=False,
+        nullable=False
+    )
+
+    access_extension_requested_at = Column(
+        DateTime,
+        nullable=True
+    )
+
+    access_extension_status = Column(
+        String(20),
+        nullable=True
+    )
+    
     created_at = Column(
         DateTime,
         default=datetime.utcnow,

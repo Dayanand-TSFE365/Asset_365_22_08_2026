@@ -107,7 +107,9 @@ check_database_connection()
 
 
 
-app = FastAPI()
+app = FastAPI(
+    
+)
 
 
 logger.info("=" * 60)

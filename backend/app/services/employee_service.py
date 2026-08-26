@@ -4,6 +4,8 @@ from app.models.employee_model import Employee
 from app.models.auth_model import AuthUser
 from datetime import datetime
 
+from sqlalchemy.orm import Session
+
 from app.repository.employee_repo import (
     create_employee_repo,
     update_employee_repo,
@@ -83,170 +85,222 @@ def get_all_employees_service(db):
 
 
 
-    
+
 def create_employee_service(
-    db,
+    db: Session,
     data,
     performed_by
 ):
 
-    # -----------------------------------
-    # CHECK AUTH USER EMAIL
-    # -----------------------------------
-
-    existing_user = (
-
-        db.query(AuthUser)
-
-        .filter(
-            AuthUser.email == data.email
-        )
-
-        .first()
-    )
-
-    if existing_user:
-
-        raise HTTPException(
-
-            status_code=400,
-
-            detail="Email already exists"
-        )
-
-    # -----------------------------------
-    # CHECK EMPLOYEE CODE
-    # -----------------------------------
+    # ==========================================================
+    # 1. CHECK EMPLOYEE CODE
+    # ==========================================================
 
     existing_employee_code = (
-
         db.query(Employee)
-
         .filter(
-            Employee.employee_code
-            == data.employee_code
+            Employee.employee_code == data.employee_code
         )
-
         .first()
     )
 
     if existing_employee_code:
-
         raise HTTPException(
-
             status_code=400,
-
-            detail=
-            "Employee code already exists"
+            detail="Employee code already exists"
         )
 
-    # -----------------------------------
-    # PASSWORD VALIDATION
-    # -----------------------------------
+    # ==========================================================
+    # 2. FIND AUTH USER BY EMAIL
+    # ==========================================================
 
-    if data.login_enabled:
+    auth_user = (
+        db.query(AuthUser)
+        .filter(
+            AuthUser.email == data.email
+        )
+        .first()
+    )
 
-        if not data.password:
+    # ==========================================================
+    # CASE A
+    # ==========================================================
+    # User already exists because they registered through
+    # /signup.
+    #
+    # DO NOT CREATE ANOTHER AuthUser.
+    # Link Employee to the existing AuthUser.
+    # ==========================================================
+
+    if auth_user:
+
+        # ------------------------------------------
+        # Check whether this AuthUser already has
+        # an Employee record
+        # ------------------------------------------
+
+        existing_employee = (
+            db.query(Employee)
+            .filter(
+                Employee.auth_user_id == auth_user.id
+            )
+            .first()
+        )
+
+        if existing_employee:
 
             raise HTTPException(
-
                 status_code=400,
-
-                detail=
-                "Password is required"
+                detail=(
+                    "An employee is already linked "
+                    "to this email address."
+                )
             )
 
-        if data.password != data.confirm_password:
+        # ------------------------------------------
+        # Employee created from existing signup user
+        # ------------------------------------------
 
-            raise HTTPException(
+        full_name = (
+            f"{data.first_name} "
+            f"{data.last_name}"
+        ).strip()
 
-                status_code=400,
+        employee = Employee(
 
-                detail=
-                "Passwords do not match"
-            )
+            auth_user_id=auth_user.id,
 
-    # -----------------------------------
-    # CREATE AUTH USER
-    # -----------------------------------
+            employee_code=data.employee_code,
 
-    auth_user = AuthUser(
+            full_name=full_name,
 
-        email=data.email,
+            # IMPORTANT:
+            # Always take email from AuthUser
+            # for consistency.
+            email=auth_user.email,
 
-        password_hash=
-        hash_password(
-            data.password
-        ) if data.password else None,
+            phone=data.phone,
 
-        role="employee",
+            department=data.department,
 
-        is_active=data.login_enabled,
+            designation=data.designation,
 
-        failed_attempts=0,
+            status="Active",
 
-        is_verified=data.login_enabled,
+            is_deleted=False
+        )
 
-        is_approved=data.login_enabled,
+        employee = create_employee_repo(
+            db,
+            employee
+        )
 
-        created_at=datetime.utcnow(),
+    # ==========================================================
+    # CASE B
+    # ==========================================================
+    # Email does NOT exist.
+    #
+    # This means admin is creating an employee directly.
+    #
+    # Create AuthUser + Employee together.
+    # ==========================================================
 
-        updated_at=datetime.utcnow()
-    )
+    else:
 
-    db.add(auth_user)
+        # ------------------------------------------
+        # Password validation
+        # ------------------------------------------
 
-    db.flush()
+        if data.login_enabled:
 
-    # -----------------------------------
-    # FULL NAME
-    # -----------------------------------
+            if not data.password:
+                raise HTTPException(
+                    status_code=400,
+                    detail="Password is required"
+                )
 
-    full_name = (
+            if data.password != data.confirm_password:
+                raise HTTPException(
+                    status_code=400,
+                    detail="Passwords do not match"
+                )
 
-        f"{data.first_name} "
-        f"{data.last_name}"
+        # ------------------------------------------
+        # Create AuthUser
+        # ------------------------------------------
 
-    ).strip()
+        auth_user = AuthUser(
 
-    # -----------------------------------
-    # CREATE EMPLOYEE
-    # -----------------------------------
+            email=data.email,
 
-    employee = Employee(
+            password_hash=(
+                hash_password(data.password)
+                if data.password
+                else None
+            ),
 
-        auth_user_id=
-        auth_user.id,
+            role="employee",
 
-        employee_code=
-        data.employee_code,
+            is_active=data.login_enabled,
 
-        full_name=
-        full_name,
+            failed_attempts=0,
 
-        email=
-        data.email,
+            is_verified=data.login_enabled,
 
-        phone=
-        data.phone,
+            is_approved=data.login_enabled,
 
-        department=
-        data.department,
+            created_at=datetime.utcnow(),
 
-        designation=
-        data.designation,
+            updated_at=datetime.utcnow()
+        )
 
-        status="Active"
-    )
+        db.add(auth_user)
 
-    employee = create_employee_repo(
-        db,
-        employee
-    )
+        # Get generated AuthUser.id
+        db.flush()
 
-    # -----------------------------------
+        # ------------------------------------------
+        # Full name
+        # ------------------------------------------
+
+        full_name = (
+            f"{data.first_name} "
+            f"{data.last_name}"
+        ).strip()
+
+        # ------------------------------------------
+        # Create Employee
+        # ------------------------------------------
+
+        employee = Employee(
+
+            auth_user_id=auth_user.id,
+
+            employee_code=data.employee_code,
+
+            full_name=full_name,
+
+            email=auth_user.email,
+
+            phone=data.phone,
+
+            department=data.department,
+
+            designation=data.designation,
+
+            status="Active",
+
+            is_deleted=False
+        )
+
+        employee = create_employee_repo(
+            db,
+            employee
+        )
+
+    # ==========================================================
     # ACTIVITY LOG
-    # -----------------------------------
+    # ==========================================================
 
     log_activity(
 
@@ -267,52 +321,298 @@ def create_employee_service(
         notes=(
             f"Created employee '{employee.full_name}' "
             f"(Code: {employee.employee_code}) "
-            f"in {employee.department} as {employee.designation}."
+            f"in {employee.department} "
+            f"as {employee.designation}."
         )
     )
 
+    # ==========================================================
+    # COMMIT
+    # ==========================================================
+
     db.commit()
 
+    db.refresh(auth_user)
     db.refresh(employee)
+
+    # ==========================================================
+    # RESPONSE
+    # ==========================================================
 
     return {
 
-    # AUTH USER
+        # ------------------------------------------
+        # AUTH USER
+        # ------------------------------------------
 
-    "user_id": auth_user.id,
+        "user_id": auth_user.id,
 
-    "email": auth_user.email,
+        "email": auth_user.email,
 
-    "role": auth_user.role,
+        "role": auth_user.role,
 
-    "is_active": auth_user.is_active,
+        "is_active": auth_user.is_active,
 
-    "is_verified": auth_user.is_verified,
+        "is_verified": auth_user.is_verified,
 
-    "is_approved": auth_user.is_approved,
+        "is_approved": auth_user.is_approved,
 
-    # EMPLOYEE
+        # ------------------------------------------
+        # EMPLOYEE
+        # ------------------------------------------
 
-    "employee_id": employee.id,
+        "employee_id": employee.id,
 
-    "employee_code": employee.employee_code,
+        "employee_code": employee.employee_code,
 
-    "full_name": employee.full_name,
+        "full_name": employee.full_name,
 
-    "phone": employee.phone,
+        "phone": employee.phone,
 
-    "department": employee.department,
+        "department": employee.department,
 
-    "designation": employee.designation,
+        "designation": employee.designation,
 
-    "status": employee.status,
+        "status": employee.status,
 
-    # EXTRA
+        # ------------------------------------------
+        # EXTRA
+        # ------------------------------------------
 
-    "login_enabled": auth_user.is_active,
+        "login_enabled": auth_user.is_active,
 
-    "created_at": auth_user.created_at
-}
+        "created_at": auth_user.created_at
+    }
+    
+# def create_employee_service(
+#     db,
+#     data,
+#     performed_by
+# ):
+
+#     # -----------------------------------
+#     # CHECK AUTH USER EMAIL
+#     # -----------------------------------
+
+#     existing_user = (
+
+#         db.query(AuthUser)
+
+#         .filter(
+#             AuthUser.email == data.email
+#         )
+
+#         .first()
+#     )
+
+#     if existing_user:
+
+#         raise HTTPException(
+
+#             status_code=400,
+
+#             detail="Email already exists"
+#         )
+
+#     # -----------------------------------
+#     # CHECK EMPLOYEE CODE
+#     # -----------------------------------
+
+#     existing_employee_code = (
+
+#         db.query(Employee)
+
+#         .filter(
+#             Employee.employee_code
+#             == data.employee_code
+#         )
+
+#         .first()
+#     )
+
+#     if existing_employee_code:
+
+#         raise HTTPException(
+
+#             status_code=400,
+
+#             detail=
+#             "Employee code already exists"
+#         )
+
+#     # -----------------------------------
+#     # PASSWORD VALIDATION
+#     # -----------------------------------
+
+#     if data.login_enabled:
+
+#         if not data.password:
+
+#             raise HTTPException(
+
+#                 status_code=400,
+
+#                 detail=
+#                 "Password is required"
+#             )
+
+#         if data.password != data.confirm_password:
+
+#             raise HTTPException(
+
+#                 status_code=400,
+
+#                 detail=
+#                 "Passwords do not match"
+#             )
+
+#     # -----------------------------------
+#     # CREATE AUTH USER
+#     # -----------------------------------
+
+#     auth_user = AuthUser(
+
+#         email=data.email,
+
+#         password_hash=
+#         hash_password(
+#             data.password
+#         ) if data.password else None,
+
+#         role="employee",
+
+#         is_active=data.login_enabled,
+
+#         failed_attempts=0,
+
+#         is_verified=data.login_enabled,
+
+#         is_approved=data.login_enabled,
+
+#         created_at=datetime.utcnow(),
+
+#         updated_at=datetime.utcnow()
+#     )
+
+#     db.add(auth_user)
+
+#     db.flush()
+
+#     # -----------------------------------
+#     # FULL NAME
+#     # -----------------------------------
+
+#     full_name = (
+
+#         f"{data.first_name} "
+#         f"{data.last_name}"
+
+#     ).strip()
+
+#     # -----------------------------------
+#     # CREATE EMPLOYEE
+#     # -----------------------------------
+
+#     employee = Employee(
+
+#         auth_user_id=
+#         auth_user.id,
+
+#         employee_code=
+#         data.employee_code,
+
+#         full_name=
+#         full_name,
+
+#         email=
+#         data.email,
+
+#         phone=
+#         data.phone,
+
+#         department=
+#         data.department,
+
+#         designation=
+#         data.designation,
+
+#         status="Active"
+#     )
+
+#     employee = create_employee_repo(
+#         db,
+#         employee
+#     )
+
+#     # -----------------------------------
+#     # ACTIVITY LOG
+#     # -----------------------------------
+
+#     log_activity(
+
+#         db=db,
+
+#         created_by=performed_by,
+
+#         module="EMPLOYEE",
+
+#         action="CREATE",
+
+#         item_type="EMPLOYEE",
+
+#         item_id=employee.id,
+
+#         item_name=employee.full_name,
+
+#         notes=(
+#             f"Created employee '{employee.full_name}' "
+#             f"(Code: {employee.employee_code}) "
+#             f"in {employee.department} as {employee.designation}."
+#         )
+#     )
+
+#     db.commit()
+
+#     db.refresh(employee)
+
+#     return {
+
+#     # AUTH USER
+
+#     "user_id": auth_user.id,
+
+#     "email": auth_user.email,
+
+#     "role": auth_user.role,
+
+#     "is_active": auth_user.is_active,
+
+#     "is_verified": auth_user.is_verified,
+
+#     "is_approved": auth_user.is_approved,
+
+#     # EMPLOYEE
+
+#     "employee_id": employee.id,
+
+#     "employee_code": employee.employee_code,
+
+#     "full_name": employee.full_name,
+
+#     "phone": employee.phone,
+
+#     "department": employee.department,
+
+#     "designation": employee.designation,
+
+#     "status": employee.status,
+
+#     # EXTRA
+
+#     "login_enabled": auth_user.is_active,
+
+#     "created_at": auth_user.created_at
+# }
 
 
 
@@ -625,6 +925,7 @@ def update_employee_service(
         else:
 
             auth_user.is_active = False
+            auth_user.is_approved = False
 
     # ------------------------------------
     # PASSWORD UPDATE

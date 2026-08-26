@@ -1,5 +1,6 @@
 from pydantic import BaseModel, EmailStr,Field, validator
-
+from typing import Optional
+from datetime import datetime
 
 class SignupRequest(BaseModel):
     email: EmailStr
@@ -47,3 +48,19 @@ class ResetPasswordRequest_For_OTP(BaseModel):
     confirm_password: str
     
 
+class ApproveUserRequest(BaseModel):
+
+    user_id: int
+
+    access_type: str
+
+    access_expires_at: Optional[datetime] = None
+
+
+class AccessExtensionRequest(BaseModel):
+    email: EmailStr
+    password: str
+
+class ExtendAccessRequest(BaseModel):
+    user_id: int
+    access_expires_at: datetime
